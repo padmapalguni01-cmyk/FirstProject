@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1763535234869,1261,CreateBooking,200,OK,Booking 1-1,text,true,,941,466,7,7,https://restful-booker.herokuapp.com/booking,1256,0,1001
+1763535235160,1001,CreateBooking,200,OK,Booking 1-3,text,true,,941,466,7,7,https://restful-booker.herokuapp.com/booking,1001,0,752
+1763535234960,1204,CreateBooking,200,OK,Booking 1-2,text,true,,941,466,6,6,https://restful-booker.herokuapp.com/booking,1204,0,936
+1763535235358,1064,CreateBooking,200,OK,Booking 1-4,text,true,,941,466,6,6,https://restful-booker.herokuapp.com/booking,1064,0,799
+1763535235556,1001,CreateBooking,200,OK,Booking 1-5,text,true,,941,466,6,6,https://restful-booker.herokuapp.com/booking,1001,0,751
+1763535235756,1080,CreateBooking,200,OK,Booking 1-6,text,true,,941,466,5,5,https://restful-booker.herokuapp.com/booking,1080,0,811
+1763535235957,1040,CreateBooking,200,OK,Booking 1-7,text,true,,941,466,4,4,https://restful-booker.herokuapp.com/booking,1040,0,781
+1763535236159,994,CreateBooking,200,OK,Booking 1-8,text,true,,949,466,3,3,https://restful-booker.herokuapp.com/booking,994,0,746
+1763535236357,1086,CreateBooking,200,OK,Booking 1-9,text,true,,949,466,2,2,https://restful-booker.herokuapp.com/booking,1086,0,815
+1763535236557,1041,CreateBooking,200,OK,Booking 1-10,text,true,,949,466,1,1,https://restful-booker.herokuapp.com/booking,1041,0,780
