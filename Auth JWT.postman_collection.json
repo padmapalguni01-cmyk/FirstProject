@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "c731a6c4-27ec-432a-aae2-1673c1692ce1",
+		"name": "Auth JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50153415",
+		"_collection_link": "https://padmapalguni01-5896683.postman.co/workspace/Padma's-Workspace~8428217a-90ee-46a3-8e00-08a5a2d32f03/collection/50153415-c731a6c4-27ec-432a-aae2-1673c1692ce1?action=share&source=collection_link&creator=50153415"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for successful login\r",
+							"pm.test(\"Status code is 2xx for successful login\", function () {\r",
+							"    if (pm.response.code >= 200 && pm.response.code < 300) {\r",
+							"        var jsonData = pm.response.json();\r",
+							"        pm.expect(jsonData).to.have.property(\"access_token\");\r",
+							"    }\r",
+							"});\r",
+							"// Test for unauthorized error\r",
+							"pm.test(\"Unauthorized returns 401\", function () {\r",
+							"    if (pm.response.code === 401) {\r",
+							"        var jsonData = pm.response.json();\r",
+							"        pm.expect(jsonData).to.have.property(\"message\");\r",
+							"        pm.expect(jsonData.message.toLowerCase()).to.include(\"unauthorized\");\r",
+							"    }\r",
+							"});\r",
+							"// Test for common error codes\r",
+							"pm.test(\"Handle common error codes\", function () {\r",
+							"    pm.expect([200, 201, 400, 401, 403, 404, 500]).to.include(pm.response.code);\r",
+							"});\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n  \"email\": \"john@mail.com\",\r\n  \"password\": \"changeme\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc2MzcxMzQ3MiwiZXhwIjoxNzY1NDQxNDcyfQ.3Ke6noX2cK2JCuTvmu0fKyg334nVFcnt7vXiM4XdPeA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/profile",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
